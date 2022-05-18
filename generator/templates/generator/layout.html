@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GC</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body style="background-color: #212121; width: 100%;  height: 100%; ">
+
+    <!--
+        Agregamos esta anotación para indicar que en todas las paginas que extiendan de layout.html tengan incluido
+        el nabvar.html
+    -->
+    {% include 'generator/partials/navbar.html' %}
+
+
+    <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
+        <!--
+            Estas anotaciones nos sirven para establecer que dentro de estos bloques vamos a rellenar con datos, especificamente datos 
+            que provienen de los otros achivos html que extienden del layout.html
+        -->
+        
+        <div class="container p-4 text-light">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        {% include 'generator/partials/footer.html' %}
+
+        <!-- Script -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    </div>
+
+</body>
+</html>

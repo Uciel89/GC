@@ -1,0 +1,43 @@
+{% extends 'generator/layout.html' %}
+
+{% block content %}
+<div class="col-md-4 offset-md-4" style="grid-row: 1;">
+    <form action="{% url 'contraseña' %}" style="background-color: #121212;" class="card card-body p-5">
+
+        <h3>Generador de contraña</h1>
+
+        <label for="length">Selecciona la longitud de tu contraseña</label>
+        <select name="length" id="length" class="form-control">
+            <option value="6">6 Caracteres</option>
+            <option value="7">7 Caracteres</option>
+            <option value="8">8 Caracteres</option>
+            <option value="9">9 Caracteres</option>
+            <option value="10">10 Caracteres</option>
+            <option value="11">11 Caracteres</option>
+            <option value="12">12 Caracteres</option>
+            <option value="13">13 Caracteres</option>
+            <option value="14">14 Caracteres</option>
+        </select>
+    
+        <!-- Check para habilitar las caracteres en mayusculas -->
+        <div class="form-check form-switch my-2">
+            <label class="form-check-label" for="uppercase">Mayusculas</label>
+            <input class="form-check-input" type="checkbox" name="uppercase" id="uppercase">
+        </div>
+    
+        <!-- Check para habilitar los caracteres especiales -->
+        <div class="form-check form-switch my-2">
+            <label class="form-check-label" for="special">Caracteres especiales</label>
+            <input class="form-check-input" type="checkbox" name="special" id="special">
+        </div>
+    
+        <!-- Check para habilitar los numeros -->
+        <div class="form-check form-switch my-2">
+            <label class="form-check-label" for="numbers">Numeros</label>
+            <input class="form-check-input" type="checkbox" name="numbers" id="numbers">
+        </div>
+    
+        <button class="btn btn-primary">Generate password</button>
+    </form>
+</div>
+{% endblock %}
