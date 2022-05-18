@@ -1,0 +1,2 @@
+# GC
+Generador de contraseñas
